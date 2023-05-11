@@ -21,7 +21,7 @@ public class Calculator {
         throw new UnsupportedOperationException();
     }
 
-    public int divide(int dividend, int divisor) {
+    public double divide(int dividend, int divisor) {
         throw new UnsupportedOperationException();
     }
 

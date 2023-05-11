@@ -95,7 +95,7 @@ second operand = -5
 
 expected result = 8
 
-### Test Case substraction -3 - 3 = -6
+#### Test Case substraction -3 - 3 = -6
 
 first operand = -3
 
@@ -103,7 +103,7 @@ second operand = 3
 
 Expected Result = -6
 
-### Test Case substraction -3 - (-3) = 0
+#### Test Case substraction -3 - (-3) = 0
 
 first operand = - 3
 
@@ -111,11 +111,139 @@ second operand = - 3
 
 expected Result = 0
 
-### Test Case substraction 0 - 0 = 0
+#### Test Case substraction 0 - 0 = 0
 
 first operand = 0
 
 second operand = 0
 
 expected result = 0
+
+### Division
+
+#### Test Case Division by 0
+
+divisor = 0
+
+expected result = illegal argument exception
+
+#### Test Case Division  5 divided by 1 = 5
+
+dividend = 5 
+
+divisor = 1
+
+expected result = 5
+
+#### Test Case Division 3 divided by 2 = 1.5
+
+dividend = 3
+
+divisor = 2
+
+Expected result = 1.5
+
+#### Test Case Division 0 divided by 192 = 0
+
+dividend = 0
+
+divisor = 192
+
+Expected result = 0
+
+
+#### Test Case Division -2 divided by -2 = 1
+
+dividend = -2
+
+divisor = -2
+
+expected result = 1
+
+#### Test Case Division 2 divided by -2 = -1
+
+dividend = 2
+
+divisor = -2
+
+expected result = -1
+
+#### Test Case Division -2 divided by 2 = -1
+
+dividend = -2
+
+divisor = 2 
+
+expected result = -1
+
+### Multiplication
+
+#### Test Case Multiplication 1 times 5 = 5
+
+firstOperand = 1
+
+secondOperand = 5
+
+expected result = 5
+
+#### Test Case Multiplication 0 times 8000 = 0
+
+firstOperand = 0
+
+secondOperand = 8000
+
+expected result = 0
+
+#### Test Case Multiplication 8000 times 0 = 0
+
+firstOperand = 8000
+
+secondOperand = 0
+
+expected result = 0
+
+#### Test Case Multiplication -5 times 5 = -25
+
+firstOperand = -5
+
+secondOperand = 5 
+
+expected result = -25
+
+#### Test Case Multiplication 5 times -5 = -25
+
+firstOperand = 5
+
+secondOperand = -5 
+
+expected result = -25
+
+#### Test Case Multiplication -5 times -5 = 25
+
+firstOperand = -5 
+
+secondOperand = -5
+
+expected result = 25
+
+### Factorial 
+
+#### Test Case Factorial 0!
+
+firstOperand = 0
+
+expected result = 1
+
+#### Test Case Factorial 6!
+
+firstOperand = 6
+
+expectedResult = 720
+
+#### Test case Factorial (-6)!
+
+firstOperand = -6
+
+expectedResult = throw illegal argument exception
+
 
