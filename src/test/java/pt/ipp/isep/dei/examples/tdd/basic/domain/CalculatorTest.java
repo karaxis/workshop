@@ -103,7 +103,7 @@ public class CalculatorTest {
 
         // Arrange
         int firsOperand = 2;
-        int secondOperand = -1;
+        int secondOperand = 1;
         int expectedResult = 1;
         int result = 3;
 
@@ -112,6 +112,92 @@ public class CalculatorTest {
 
         assertEquals(expectedResult, result);
     }
+
+    @Test
+    public void ensureTwoMinusThreeEqualsNegativeOne(){
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int firsOperand = 2;
+        int secondOperand = 3;
+        int expectedResult = -1;
+        int result = 3;
+
+        // Act
+        result = new Calculator().subtract(firsOperand, secondOperand);
+
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void ensureThreeMinusNegativeFiveEqualsEight(){
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int firsOperand = 3;
+        int secondOperand = -5;
+        int expectedResult = 8;
+        int result = 3;
+
+        // Act
+        result = new Calculator().subtract(firsOperand, secondOperand);
+
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void ensureNegativeThreeMinusThreeEqualsNegativeSix(){
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int firsOperand = -3;
+        int secondOperand = 3;
+        int expectedResult = -6;
+        int result = 3;
+
+        // Act
+        result = new Calculator().subtract(firsOperand, secondOperand);
+
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void ensureNegativeThreeMinusNegativeThreeEqualsZero(){
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int firsOperand = -3;
+        int secondOperand = -3;
+        int expectedResult = 0;
+        int result = 3;
+
+        // Act
+        result = new Calculator().subtract(firsOperand, secondOperand);
+
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void ensureZeroMinusZeroEqualsZero(){
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int firsOperand = 0;
+        int secondOperand = 0;
+        int expectedResult = 0;
+        int result = 3;
+
+        // Act
+        result = new Calculator().subtract(firsOperand, secondOperand);
+
+        assertEquals(expectedResult, result);
+    }
+
 }
 
 
