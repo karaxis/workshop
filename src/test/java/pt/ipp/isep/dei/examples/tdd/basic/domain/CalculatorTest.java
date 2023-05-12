@@ -44,7 +44,7 @@ public class CalculatorTest {
         int firsOperand = -6;
 
         // Act, Assert
-        Assertions.assertThrows(IllegalAccessException.class, () -> {new Calculator().factorial(firsOperand);});
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {new Calculator().factorial(firsOperand);});
     }
 
     @Test
