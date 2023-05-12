@@ -10,4 +10,7 @@ public class BookmarkList {
         _bookmarklist = new ArrayList<Bookmark>();
     }
 
+    public void addBookMark(Bookmark bm){
+        _bookmarklist.add(bm);
+    }
 }

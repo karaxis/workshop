@@ -47,5 +47,9 @@ public class BookmarkTest {
         // Assert
         assertEquals(expectedResult,result);
     }
-    
+
+    @Test
+    public void addBookmarkToList(){
+        
+    }
 }
