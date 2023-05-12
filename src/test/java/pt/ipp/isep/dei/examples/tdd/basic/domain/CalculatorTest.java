@@ -164,6 +164,26 @@ public class CalculatorTest {
     }
 
     @Test
+    public void ensure5dividedby2is2(){
+                //HACK: for demonstration purposes only
+                System.out.println("\t\tExecuting " + new Object() {
+                }.getClass().getEnclosingMethod().getName() + " Test");
+        
+                // Arrange
+                int expectedResult = 2;
+                int dividend = 5;
+                int divisor = 2;
+                int result = 1;
+        
+                // Act
+                result = new Calculator().divide(dividend, divisor);
+        
+                // Assert
+                assertEquals(expectedResult, result);
+
+    }
+
+    @Test
     @Disabled
     public void failingTest() {
         fail("a disabled failing test");
