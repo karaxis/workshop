@@ -21,7 +21,7 @@ public class Calculator {
         return firstOperand - secondOperand;
     }
 
-    public double divide(int dividend, int divisor) throws IllegalArgumentException {
+    public int divide(int dividend, int divisor) throws IllegalArgumentException {
         if(divisor == 0) throw new IllegalArgumentException();
         return dividend / divisor;
     }

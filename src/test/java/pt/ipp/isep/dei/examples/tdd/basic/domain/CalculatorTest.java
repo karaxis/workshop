@@ -210,6 +210,22 @@ public class CalculatorTest {
         assertEquals(expectedResult, result);
     }
 
+    @Test
+    public void ensureDivisionByZero(){
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int divisor = 0;
+        int dividend = 1;
+
+        // Act, Assert
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {new Calculator().divide(dividend, divisor);});
+
+    }
+
+
+
 }
 
 
