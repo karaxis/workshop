@@ -95,6 +95,23 @@ public class CalculatorTest {
         // Assert
         assertEquals(expectedResult, result);
     }
+
+    @Test
+    public void ensureTwoMinusOneEqualsOne(){
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int firsOperand = 2;
+        int secondOperand = -1;
+        int expectedResult = 1;
+        int result = 3;
+
+        // Act
+        result = new Calculator().subtract(firsOperand, secondOperand);
+
+        assertEquals(expectedResult, result);
+    }
 }
 
 
