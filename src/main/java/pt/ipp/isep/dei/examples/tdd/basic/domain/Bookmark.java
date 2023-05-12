@@ -1,11 +1,12 @@
 package pt.ipp.isep.dei.examples.tdd.basic.domain;
 
-import javax.swing.text.html.HTML;
 import java.net.URL;
 
 public class Bookmark {
     
     private String URLString;
+
+    public int rating;
 
     public Bookmark(String url) throws IllegalArgumentException{
         try{
@@ -14,6 +15,8 @@ public class Bookmark {
         catch(Exception e){
             throw new IllegalArgumentException();
         }
+
+        rating = 0;
 
         URLString = url;
     }
