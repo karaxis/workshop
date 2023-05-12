@@ -3,6 +3,7 @@ package pt.ipp.isep.dei.examples.tdd.basic.domain;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
 
 public class CalculatorTest {
@@ -33,6 +34,17 @@ public class CalculatorTest {
         //HACK: for demonstration purposes only
         System.out.println(
                 "\tThis call takes place after each @Test is executed");
+    }
+    @Test
+    public void ensureMinus6FactorialThrowsIllegalArgument(){
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int firsOperand = -6;
+
+        // Act, Assert
+        Assertions.assertThrows(IllegalAccessException.class, () -> {new Calculator().factorial(firsOperand);});
     }
 
     @Test
