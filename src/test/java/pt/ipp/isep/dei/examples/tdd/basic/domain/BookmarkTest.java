@@ -21,4 +21,14 @@ public class BookmarkTest {
         //Assert
         assertEquals(expectedResult, result);
     }
+
+    @Test
+    public void onlyAllowValidURL(){
+        
+        // Arrange
+        String invalidURL = "asdasdaljdas";
+
+        //Act, Assert
+        Assertions.assertThrows(IllegalArgumentException.class,() -> {new Bookmark(invalidURL);});
+    }
 }
