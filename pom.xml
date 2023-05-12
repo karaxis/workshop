@@ -96,6 +96,7 @@
                     </includes>
                     <excludes>
                         <exclude>**Main**</exclude>
+                        <exclude>**Calculator**</exclude>
                     </excludes>
 
                 </configuration>
@@ -109,6 +110,7 @@
                 <configuration>
                     <excludes>
                         <exclude>**/ui/**/*</exclude>
+                        <exclude>**Calculator**</exclude>
                     </excludes>
                 </configuration>
                 <executions>
