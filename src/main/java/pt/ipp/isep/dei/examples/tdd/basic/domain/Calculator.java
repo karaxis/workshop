@@ -18,18 +18,27 @@ public class Calculator {
     }
 
     public int subtract(int firstOperand, int secondOperand) {
-        throw new UnsupportedOperationException();
+        return firstOperand - secondOperand;
     }
 
-    public double divide(int dividend, int divisor) {
-        throw new UnsupportedOperationException();
+    public double divide(int dividend, int divisor) throws IllegalArgumentException {
+        if(divisor == 0) throw new IllegalArgumentException();
+        return dividend / divisor;
     }
 
     public int multiply(int firstOperand, int secondOperand) {
-        throw new UnsupportedOperationException();
+        return firstOperand * secondOperand;
     }
 
-    public int factorial(int firstOperand) {
-        throw new UnsupportedOperationException();
+    public int factorial(int firstOperand) throws IllegalArgumentException {
+        if(firstOperand < 0){
+            throw new IllegalArgumentException();
+        }
+        else if(firstOperand == 0){
+            return 1;
+        }
+        else{
+            return firstOperand * factorial(firstOperand-1);
+        }
     }
 }
