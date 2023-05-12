@@ -103,7 +103,7 @@ public class CalculatorTest {
 
         // Arrange
         int firsOperand = 2;
-        int secondOperand = -1;
+        int secondOperand = 1;
         int expectedResult = 1;
         int result = 3;
 
