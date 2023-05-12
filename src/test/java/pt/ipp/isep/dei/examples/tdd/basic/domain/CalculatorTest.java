@@ -47,6 +47,42 @@ public class CalculatorTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {new Calculator().factorial(firsOperand);});
     }
 
+    @Test 
+    public void ensure6FactorialEquals720(){
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int firsOperand = 6;
+        int result = 0;
+        int expectedResult = 720;
+        
+        //Act
+        result = new Calculator().factorial(firsOperand);
+
+        //Assert
+
+        assertEquals(expectedResult,result);
+    }
+
+    @Test
+    public void ensureFactorialZeroEqualsOne(){
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int firsOperand = 0;
+        int result = 0;
+        int expectedResult = 1;
+        
+        //Act
+        result = new Calculator().factorial(firsOperand);
+
+        //Assert
+
+        assertEquals(expectedResult,result);
+    }
+
     @Test
     @Disabled
     public void failingTest() {
