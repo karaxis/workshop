@@ -84,6 +84,86 @@ public class CalculatorTest {
     }
 
     @Test
+    public void ensure0time8is0() {
+
+        //HACK: for demonstration purposes only
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int expectedResult = 0;
+        int firsOperand = 0;
+        int secondOperand = 8;
+        int result = 3;
+
+        // Act
+        result = new Calculator().multiply(firsOperand, secondOperand);
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void ensure8times0is0() {
+
+        //HACK: for demonstration purposes only
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int expectedResult = 0;
+        int firsOperand = 8;
+        int secondOperand = 0;
+        int result = 3;
+
+        // Act
+        result = new Calculator().multiply(firsOperand, secondOperand);
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void ensureMinus5timesMinus5is25() {
+
+        //HACK: for demonstration purposes only
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int expectedResult = 25;
+        int firsOperand = -5;
+        int secondOperand = -5;
+        int result = 3;
+
+        // Act
+        result = new Calculator().multiply(firsOperand, secondOperand);
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void ensure5timesMinus5is25() {
+
+        //HACK: for demonstration purposes only
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int expectedResult = -25;
+        int firsOperand = 5;
+        int secondOperand = -5;
+        int result = 3;
+
+        // Act
+        result = new Calculator().multiply(firsOperand, secondOperand);
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
     @Disabled
     public void failingTest() {
         fail("a disabled failing test");
