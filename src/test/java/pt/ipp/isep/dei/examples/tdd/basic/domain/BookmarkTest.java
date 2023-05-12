@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import java.util.ArrayList;
+
 public class BookmarkTest {
 
 
@@ -31,4 +33,19 @@ public class BookmarkTest {
         //Act, Assert
         Assertions.assertThrows(IllegalArgumentException.class,() -> {new Bookmark(invalidURL);});
     }
+
+    @Test
+    public void createBookmarkList(){
+
+        // Arrange
+        ArrayList<Bookmark> expectedResult = new BookmarkList()._bookmarklist;
+        ArrayList<Bookmark> result = null;
+
+        // Act
+        result = new BookmarkList()._bookmarklist;
+
+        // Assert
+        assertEquals(expectedResult,result);
+    }
+    
 }

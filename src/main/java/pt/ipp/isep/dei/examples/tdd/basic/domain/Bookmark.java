@@ -6,6 +6,8 @@ public class Bookmark {
     
     private String URLString;
 
+    public int rating;
+
     public Bookmark(String url) throws IllegalArgumentException{
         try{
             new URL(url).toURI();
@@ -14,6 +16,7 @@ public class Bookmark {
             throw new IllegalArgumentException();
         }
         
+        rating = 0;
         URLString = url;
     }
     public String getURL() {
