@@ -1,6 +1,8 @@
-package pt.ipp.isep.dei.examples.tdd.basic.domain;
+package pt.ipp.isep.dei.examples.tdd.basic.calculator;
 
 import org.junit.jupiter.api.*;
+
+import pt.ipp.isep.dei.examples.tdd.basic.calculator.Calculator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;

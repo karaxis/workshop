@@ -1,4 +1,4 @@
-package pt.ipp.isep.dei.examples.tdd.basic.domain;
+package pt.ipp.isep.dei.examples.tdd.basic.calculator;
 
 /**
  * Calculator class.
