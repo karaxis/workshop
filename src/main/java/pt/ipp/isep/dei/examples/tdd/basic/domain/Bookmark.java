@@ -35,7 +35,7 @@ public class Bookmark {
     }
 
     public void increaseRating(){
-        throw new UnsupportedOperationException();
+        this.rating++;
     }
 
     @Override
