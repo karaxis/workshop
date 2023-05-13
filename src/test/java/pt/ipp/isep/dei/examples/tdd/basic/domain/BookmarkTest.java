@@ -5,6 +5,7 @@ import org.junit.jupiter.api.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
@@ -53,6 +54,20 @@ public class BookmarkTest {
 
     @Test
     public void addBookmarkToList(){
+
+        //Arrange
+        ArrayList<Bookmark> expectedResultList = new ArrayList<Bookmark>();
+        expectedResultList.add(new Bookmark("https://www.youtube.com"));
+        BookmarkList expectedResult = new BookmarkList(expectedResultList);
+        
+        BookmarkList bookmarkList = new BookmarkList();
+        
+        //Act
+        bookmarkList.addBookMark(new Bookmark("https://www.youtube.com"));
+        //result = bookmarkList._bookmarklist;
+
+        //Assert
+        assertEquals(expectedResult,bookmarkList);
 
     }
 

@@ -1,6 +1,7 @@
 package pt.ipp.isep.dei.examples.tdd.basic.domain;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class BookmarkList {
 
@@ -10,7 +11,21 @@ public class BookmarkList {
         _bookmarklist = new ArrayList<Bookmark>();
     }
 
+    public BookmarkList(ArrayList<Bookmark> bookmarks){
+        _bookmarklist = new ArrayList<Bookmark>();
+        for (Bookmark bookmark : bookmarks) {
+            _bookmarklist.add(bookmark);
+        }
+    }
+
     public void addBookMark(Bookmark bm){
         _bookmarklist.add(bm);
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        BookmarkList anotherBookmarkList= (BookmarkList) object;
+        if(Arrays.equals(this._bookmarklist.toArray(),anotherBookmarkList._bookmarklist.toArray())) return true;
+        return false;
     }
 }

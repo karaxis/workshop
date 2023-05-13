@@ -33,4 +33,11 @@ public class Bookmark {
             return false;
         }
     }
+
+    @Override
+    public boolean equals(Object object) {
+    Bookmark anotherBookmark= (Bookmark) object;
+    if(this.URLString.equals(anotherBookmark.URLString)) return true;
+    return false;
+    }
 }
