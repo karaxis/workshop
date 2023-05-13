@@ -135,7 +135,7 @@ public class BookmarkTest {
         //Arrange
         int expectedResult = 1;
         int result = 0;
-        
+
         ArrayList<Bookmark> bookmarkArray = new ArrayList<Bookmark>();
         bookmarkArray.add(new Bookmark("https://www.youtube.com"));
         BookmarkList bookmarkList = new BookmarkList(bookmarkArray);
@@ -148,7 +148,24 @@ public class BookmarkTest {
         assertEquals(expectedResult,result);
     }
 
+    @Test
+    public void assertRatingOfDuplicateInListIncreases(){
+        //Arrange
+        int expectedResult = 1;
+        int result = 0;
+        ArrayList<Bookmark> bookmarkArray = new ArrayList<Bookmark>();
+        bookmarkArray.add(new Bookmark("https://www.youtube.com"));
+        BookmarkList bookmarkList = new BookmarkList(bookmarkArray);
+        
+        //Act
+        bookmarkList.addBookMark(new Bookmark("https://www.youtube.com"));
+        Bookmark bm = bookmarkList._bookmarklist.get(0);
+        result = bm.rating;
 
+        //Assert
+        assertEquals(expectedResult,result);
+
+    }
 /*    @Test
     public void ensureValidURL() throws MalformedURLException {
 
