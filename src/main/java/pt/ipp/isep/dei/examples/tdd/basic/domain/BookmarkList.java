@@ -20,6 +20,9 @@ public class BookmarkList {
 
     public void addBookMark(Bookmark bm){
         if(!_bookmarklist.contains(bm)) _bookmarklist.add(bm);
+        for (Bookmark bookmark : _bookmarklist) {
+            if(bookmark.equals(bm)) bookmark.increaseRating();
+        }
     }
 
     @Override
