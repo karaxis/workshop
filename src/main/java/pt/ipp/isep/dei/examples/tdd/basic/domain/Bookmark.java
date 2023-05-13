@@ -34,6 +34,10 @@ public class Bookmark {
         }
     }
 
+    public void increaseRating(){
+        throw new UnsupportedOperationException();
+    }
+
     @Override
     public boolean equals(Object object) {
     Bookmark anotherBookmark= (Bookmark) object;

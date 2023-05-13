@@ -71,6 +71,64 @@ public class BookmarkTest {
 
     }
 
+    @Test
+    public void assertEqualsReturnsFalseOnDifferentLists(){
+
+        //Arrange
+        boolean expectedResult = false;
+        boolean result = true;
+
+        
+        BookmarkList bookmarkList = new BookmarkList();
+        BookmarkList bookmarkList2 = new BookmarkList();
+        bookmarkList.addBookMark(new Bookmark("https://www.youtube.com"));
+        bookmarkList2.addBookMark(new Bookmark("https://www.google.com"));
+        
+        //Act
+        result = bookmarkList.equals(bookmarkList2);
+
+        //result = bookmarkList._bookmarklist;
+
+        //Assert
+        assertEquals(expectedResult,result);
+
+    }
+
+    @Test
+    public void assertBookmarkEqualsFalseOnDifferentURLs(){
+        
+        //Arrange
+        boolean expectedResult = false;
+        boolean result = true;
+
+        Bookmark bookmark1 = new Bookmark("https://www.youtube.com");
+        Bookmark bookmark2 = new Bookmark("https://www.google.com");
+
+        //Act
+        result = bookmark1.equals(bookmark2);
+
+
+        //Assert
+        assertEquals(expectedResult,result);
+    }
+
+    @Test
+    public void assertRatingIncreases(){
+        
+        //Arrange
+        int expectedResult = 1;
+        int result = 0;
+
+        Bookmark bookmark = new Bookmark("https://www.youtube.com");
+        
+        //Act
+        bookmark.increaseRating();
+        result = bookmark.rating;
+
+        //Assert
+        assertEquals(expectedResult,result);
+    }
+
 /*    @Test
     public void ensureValidURL() throws MalformedURLException {
 
