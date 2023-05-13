@@ -15,11 +15,22 @@ public class Bookmark {
         catch(Exception e){
             throw new IllegalArgumentException();
         }
-        
+
         rating = 0;
+
         URLString = url;
     }
+
     public String getURL() {
         return URLString;
+    }
+
+
+    public static boolean checkIfKeywordLongerThan3Char(String keyword){
+        if (keyword.length() > 3) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
