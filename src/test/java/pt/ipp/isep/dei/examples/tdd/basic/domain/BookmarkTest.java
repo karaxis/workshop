@@ -166,6 +166,23 @@ public class BookmarkTest {
         assertEquals(expectedResult,result);
 
     }
+
+    @Test
+    public void assertNonDuplicateIsAdded(){
+        //Arrange
+        int expectedResult = 2;
+        int result = 0;
+        ArrayList<Bookmark> bookmarkArray = new ArrayList<Bookmark>();
+        bookmarkArray.add(new Bookmark("https://www.youtube.com"));
+        BookmarkList bookmarkList = new BookmarkList(bookmarkArray);
+        
+        //Act
+        bookmarkList.addBookMark(new Bookmark("https://www.goole.com"));
+        result = bookmarkList._bookmarklist.size();
+
+        //Assert
+        assertEquals(expectedResult,result);
+    }
 /*    @Test
     public void ensureValidURL() throws MalformedURLException {
 
