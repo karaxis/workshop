@@ -19,7 +19,7 @@ public class BookmarkList {
     }
 
     public void addBookMark(Bookmark bm){
-        _bookmarklist.add(bm);
+        if(!_bookmarklist.contains(bm)) _bookmarklist.add(bm);
     }
 
     @Override
