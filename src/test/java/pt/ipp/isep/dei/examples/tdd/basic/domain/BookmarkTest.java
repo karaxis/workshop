@@ -11,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BookmarkTest {
 
@@ -264,9 +265,27 @@ public class BookmarkTest {
         assertEquals(expected, result);
     }
 
+    @Test
+    public void ensureBookmarkWithHighestRatingIsAtIndexZero() {
+        // Arrange
+        BookmarkList list = new BookmarkList();
+        list.addBookMark(new Bookmark("https://www.fh-campuswien.ac.at/"));
+        list.addBookMark(new Bookmark("https://www.orf.at/"));
+        list.addBookMark(new Bookmark("https://www.google.com/"));
+        list.addBookMark(new Bookmark("https://www.fh-campuswien.ac.at/"));
+        list.addBookMark(new Bookmark("https://www.fh-campuswien.ac.at/"));
+        list.addBookMark(new Bookmark("https://www.orf.at/"));
 
+        //Act
+        List<Bookmark> sortedBookmarks = list.sortBookmarksByRating();
+        String firstPlaceUrl = sortedBookmarks.get(0).getURL();
+        String secondPlaceUrl = sortedBookmarks.get(1).getURL();
+        String thirdPlaceUrl = sortedBookmarks.get(2).getURL();
 
-
-
+        //Assert
+        assertEquals(firstPlaceUrl, "https://www.fh-campuswien.ac.at/");
+        assertEquals(secondPlaceUrl, "https://www.orf.at/");
+        assertEquals(thirdPlaceUrl, "https://www.google.com/");
+    }
 
 }
