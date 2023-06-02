@@ -38,4 +38,10 @@ public class BookmarkList {
     public int countSecureUrls() {
         return (int) _bookmarklist.stream().filter(bookmark -> bookmark.getURL().substring(0, 5).contains("https")).count();
     }
+
+    public List<Bookmark> sortBookmarksByRating() {
+        List<Bookmark> sortedBookmarks = new ArrayList<>(_bookmarklist);
+        sortedBookmarks.sort(Comparator.comparing(Bookmark::getRating).reversed());
+        return sortedBookmarks;
+    }
 }
