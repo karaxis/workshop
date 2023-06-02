@@ -3,10 +3,13 @@ package pt.ipp.isep.dei.examples.tdd.basic.domain;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import java.util.*;
+
 public class BookmarkList {
 
     public ArrayList<Bookmark> _bookmarklist;
-    
+    private Bookmark bookmark;
+
     public BookmarkList(){
         _bookmarklist = new ArrayList<Bookmark>();
     }
@@ -30,5 +33,9 @@ public class BookmarkList {
         BookmarkList anotherBookmarkList= (BookmarkList) object;
         if(Arrays.equals(this._bookmarklist.toArray(),anotherBookmarkList._bookmarklist.toArray())) return true;
         return false;
+    }
+
+    public int countSecureUrls() {
+        return (int) _bookmarklist.stream().filter(bookmark -> bookmark.getURL().substring(0, 5).contains("https")).count();
     }
 }
