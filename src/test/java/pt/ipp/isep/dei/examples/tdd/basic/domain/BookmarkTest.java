@@ -248,6 +248,21 @@ public class BookmarkTest {
         assertEquals(expectedResult, result);
     }
 
+    @Test
+    public void detectHowManySecureUrlsAreStored() {//Arrange
+        BookmarkList list = new BookmarkList();
+        int expected = 2;
+
+        //Act
+        list.addBookMark(new Bookmark("https://www.youtube.com"));
+        list.addBookMark(new Bookmark("https://www.a1.net"));
+        list.addBookMark(new Bookmark("http://www.a1.net"));
+        list.addBookMark(new Bookmark("http://www.a1.net"));
+        int result = list.countSecureUrls();
+
+        //Assert
+        assertEquals(expected, result);
+    }
 
 
 
