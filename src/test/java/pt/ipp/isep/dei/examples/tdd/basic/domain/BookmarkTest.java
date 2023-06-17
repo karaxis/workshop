@@ -246,6 +246,53 @@ public class BookmarkTest {
     }
 
     @Test
+    public void removeWantedKeywordFromBookmark(){
+        boolean expectedResult = false;
+        Bookmark bookmark = new Bookmark("https://www.google.com/");
+        bookmark.addKeyword("tag1");
+        bookmark.addKeyword("tag2");
+
+        bookmark.removeKeyword("tag1");
+        boolean result = bookmark.getKeywords().contains("tag1");
+        assertEquals(expectedResult, result);
+    }
+
+    public void removeUnwantedKeywordFromBookmark(){
+        boolean expectedResult = true;
+        Bookmark bookmark = new Bookmark("https://www.google.com/");
+        bookmark.addKeyword("tag1");
+
+        bookmark.removeKeyword("tag2");
+        boolean result = bookmark.getKeywords().contains("tag1");
+        assertEquals(expectedResult, result);
+    }
+
+    public void removeNotExistingKeywordFromBookmark(){
+        boolean expectedResult = false;
+        Bookmark bookmark = new Bookmark("https://www.google.com/");
+        bookmark.addKeyword("tag1");
+
+        bookmark.removeKeyword("tag2");
+        boolean result = bookmark.getKeywords().contains("tag2");
+        assertEquals(expectedResult, result);
+    }
+
+    public void removeMultipleIdenticalKeywords(){
+        boolean expectedResult = false;
+        Bookmark bookmark = new Bookmark("https://www.google.com/");
+        bookmark.addKeyword("tag1");
+        bookmark.addKeyword("tag2");
+        bookmark.addKeyword("tag1");
+        bookmark.addKeyword("tag1");
+        bookmark.addKeyword("tag3");
+
+        bookmark.removeKeyword("tag1");
+        boolean result = bookmark.getKeywords().contains("tag1");
+        assertEquals(expectedResult, result);
+    }
+
+
+    @Test
     public void detectHowManySecureUrlsAreStored() {//Arrange
         BookmarkList list = new BookmarkList();
         int expected = 2;
