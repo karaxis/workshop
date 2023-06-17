@@ -1,10 +1,13 @@
 package pt.ipp.isep.dei.examples.tdd.basic.domain;
 
 import java.net.URL;
+import java.util.ArrayList;
 
 public class Bookmark {
     
     private String URLString;
+    //ArrayList<String> keywords stores the keywords
+    private ArrayList<String> keywords;
 
     public int rating;
 
@@ -19,14 +22,33 @@ public class Bookmark {
         rating = 0;
 
         URLString = url;
+        this.keywords = new ArrayList<String>();
     }
 
     public String getURL() {
         return URLString;
     }
 
+    //add keyowrd
+    public void add_Keyword(String keyword){
 
-    public static boolean checkIfKeywordLongerThan3Char(String keyword){
+        if (checkIfKeywordLongerThan3Char(keyword)){
+            keywords.add(keyword);
+        }
+    }
+
+/*    //check if keyword already exists
+    public boolean hasKeyword(String keyword){
+        return keywords.contains(keyword);
+    }
+
+    //retrieve all the keywords associated with the bookmark
+    public ArrayList<String> getKeywords(){
+        return keywords;
+    }*/
+
+    public boolean checkIfKeywordLongerThan3Char(String keyword){
+
         if (keyword.length() > 3) {
             return true;
         } else {
