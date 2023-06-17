@@ -207,7 +207,6 @@ public class BookmarkTest {
 
     @Test
     public void keywordShorterThan3Char(){
-
         boolean expectedResult = false;
         //Act
         boolean result = new Bookmark("https://www.google.com/").checkIfKeywordLongerThan3Char("a");
@@ -218,7 +217,6 @@ public class BookmarkTest {
 
     @Test
     public void keywordEqualTo3Char(){
-
         boolean expectedResult = false;
         //Act
         boolean result = new Bookmark("https://www.google.com/").checkIfKeywordLongerThan3Char("a2-");
@@ -229,7 +227,6 @@ public class BookmarkTest {
 
     @Test
     public void keywordLongerThan3Char(){
-
         boolean expectedResult = true;
         //Act
         boolean result = new Bookmark("https://www.google.com/").checkIfKeywordLongerThan3Char("2-po7d");
@@ -240,7 +237,6 @@ public class BookmarkTest {
 
     @Test
     public void keywordIsEmpty(){
-
         boolean expectedResult = false;
         //Act
         boolean result = new Bookmark("https://www.google.com/").checkIfKeywordLongerThan3Char("");
