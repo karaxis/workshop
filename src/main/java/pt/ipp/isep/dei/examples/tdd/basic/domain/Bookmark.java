@@ -29,8 +29,8 @@ public class Bookmark {
         return URLString;
     }
 
-    //add keyowrd
-    public void add_Keyword(String keyword){
+    //add keyoword
+    public void addKeyword(String keyword){
 
         if (checkIfKeywordLongerThan3Char(keyword)){
             keywords.add(keyword);
@@ -41,11 +41,12 @@ public class Bookmark {
     public boolean hasKeyword(String keyword){
         return keywords.contains(keyword);
     }
+    }*/
 
     //retrieve all the keywords associated with the bookmark
-    public ArrayList<String> getKeywords(){
+    public ArrayList<String> getKeywords() {
         return keywords;
-    }*/
+    }
 
     public boolean checkIfKeywordLongerThan3Char(String keyword){
 
@@ -54,6 +55,10 @@ public class Bookmark {
         } else {
             return false;
         }
+    }
+
+    public void removeKeyword(String keyword){
+        keywords.remove(keyword);
     }
 
     public void increaseRating(){
