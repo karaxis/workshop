@@ -44,4 +44,8 @@ public class BookmarkList {
         sortedBookmarks.sort(Comparator.comparing(Bookmark::getRating).reversed());
         return sortedBookmarks;
     }
+
+    public void removeURL(Bookmark bookmark){
+        
+    }
 }
