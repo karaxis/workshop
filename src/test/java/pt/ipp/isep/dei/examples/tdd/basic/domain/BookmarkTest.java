@@ -331,4 +331,57 @@ public class BookmarkTest {
         assertEquals(thirdPlaceUrl, "https://www.google.com/");
     }
 
+    @Test
+    public void ensureBookmarkIsRemoved(){
+        //Arrange
+        boolean expectedResult = false;
+        boolean result = true;
+        Bookmark bookmarkTest = new Bookmark("https://www.orf.at/");
+        BookmarkList list = new BookmarkList();
+        list.addBookMark(bookmarkTest);
+
+        //Act
+        list.removeURL(bookmarkTest);
+        result = list._bookmarklist.contains(bookmarkTest);
+
+        //Assert
+        assertEquals(expectedResult,result);
+        
+    }
+
+    @Test
+    public void ensureSizeDecreasesAfterRemoval(){
+        //Arrange
+        int expectedResult = 1;
+        int result = 0;
+        BookmarkList list = new BookmarkList();
+        list.addBookMark(new Bookmark("https://www.fh-campuswien.ac.at/"));
+        list.addBookMark(new Bookmark("https://www.orf.at/"));
+        Bookmark toBeRemovedBookmark = new Bookmark("https://www.orf.at/");
+
+        //Act
+        list.removeURL(toBeRemovedBookmark);
+        result = list._bookmarklist.size();
+
+        //Assert
+        assertEquals(expectedResult,result);
+    }
+
+    @Test
+    public void ensureBookmarkIsNotRemovedOnDifferentBookmark(){
+        //Arrange
+        boolean expectedResult = true;
+        boolean result = false;
+        BookmarkList list = new BookmarkList();
+        list.addBookMark(new Bookmark("https://www.fh-campuswien.ac.at/"));
+        Bookmark toBeRemovedBookmark = new Bookmark("https://www.orf.at/");
+
+        //Act
+        list.removeURL(toBeRemovedBookmark);
+        result = list._bookmarklist.contains(new Bookmark("https://www.fh-campuswien.ac.at/"));
+
+        //Assert
+        assertEquals(expectedResult,result);
+    }
+
 }
