@@ -29,6 +29,9 @@ public class Bookmark {
         return URLString;
     }
 
+    public int getRating() {
+        return rating;
+    }
     //add keyoword
     public void addKeyword(String keyword){
 
