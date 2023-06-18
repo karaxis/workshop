@@ -46,6 +46,6 @@ public class BookmarkList {
     }
 
     public void removeURL(Bookmark bookmark){
-        
+        if(_bookmarklist.contains(bookmark)) _bookmarklist.remove(bookmark);
     }
 }
